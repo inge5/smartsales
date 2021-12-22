@@ -1,0 +1,24 @@
+<div class="">
+    <nav id="navbar-secundario" class="menu-secondary navbar navbar-expand-lg navbar-light bg-white box-shadow-menu height-50">
+        <div class="container">
+            <ul class="navbar-nav main-menu-list mr-auto">
+                <ng-container *ngFor="let subitem of submenu.items">
+                    <li class="nav-item">
+                        <ng-container *ngIf="subitem.title_position === '' else noURL">
+                            <a class="nav-link nav-link-main size16 navbar-brand pl-0" (click)="scrollConClick(subitem.url)" style="cursor: pointer;">
+                                <span class="{{ subitem.title_position }}">{{ subitem.title }}</span>
+                            </a>
+                        </ng-container>
+                        <ng-template #noURL>
+                            <a class="nav-link nav-link-main size16 navbar-brand pl-0" [routerLink]="[subitem.url]">
+                                <img *ngIf="subitem.thumbnail_src" [src]="subitem.thumbnail_src" alt="Logo principal" class="img-logo">
+                                <span [class]="[subitem.title_position==='after'?'':subitem.title_position]">{{ subitem.title }}</span>
+                            </a>
+                        </ng-template>                        
+                    </li>
+                </ng-container>
+            </ul>
+            <button mat-raised-button class="demo-smartsale size18 border-radius-2" (click)="abrirSide()">Demo</button>
+        </div>
+    </nav>
+</div>

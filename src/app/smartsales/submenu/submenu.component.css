@@ -1,0 +1,9 @@
+.height-50{
+    height: 50px;
+}
+
+@media (max-width: 991px){
+    .height-50{
+        height: auto;
+    }
+}

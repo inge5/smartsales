@@ -1,0 +1,91 @@
+<div class="container">
+    <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'20px','border-radius': '10px','padding':'15px', 'margin-top':'15px', 'margin-bottom':'10px' }"></ngx-skeleton-loader>   
+</div>
+<div class="pagina-full" id="wrapper" *ngIf="!loader">
+    <app-submenu></app-submenu>
+    <div class="precios-smartsales mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive mb-3">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr class="border-0">
+                                    <th class="border-0"></th>
+                                    <th class="border-0 bg-red text-center text-white border-radius-top-table text-uppercase" colspan="3">{{ prices.titulo }}</th>
+                                </tr>
+                                <ng-container *ngFor="let price of prices.contenido; let i = index">
+                                    <tr *ngIf="i == 0">
+                                        <th>{{ price.texto }}</th>
+                                        <th class="text-black-dark size14 font-weight-500">
+                                            <img class="mr-1" src="{{ price.valor_paquete_1.icono }}" alt="Logo">{{ price.valor_paquete_1.texto }}
+                                        </th>
+                                        <th class="text-black-dark size14 font-weight-500">
+                                            <img class="mr-1" src="{{ price.valor_paquete_2.icono }}" alt="Logo">{{ price.valor_paquete_2.texto }}
+                                        </th>
+                                        <th class="text-black-dark size14 font-weight-500 border-radius-right-table">
+                                            <img class="mr-1" src="{{ price.valor_paquete_3.icono }}" alt="Logo">{{ price.valor_paquete_3.texto }}
+                                        </th>
+                                    </tr>
+                                </ng-container>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let price of prices.contenido; let i = index">
+                                    <tr *ngIf="i != 0" class="" [ngClass]="(price.titulo != false) ? 'bg-gray-dark' : ''">
+                                        <th class="" scope="col" [ngClass]="(price.titulo != false) ? 'text-white size14 font-weight-500' : 'text-black-dark size14 font-weight-400 letter-spacing-084'">{{ price.texto }}</th>
+                                        <th class="font-weight-500 text-center size14 font-weight-500" scope="col" [ngClass]="(price.titulo == false) ? 'text-black-dark' : 'text-white'">
+                                            <ng-template [ngIf]="price.valor_paquete_1.texto != ''" [ngIfElse]="dots"> 
+                                                {{ price.valor_paquete_1.texto }}
+                                            </ng-template>
+                                            <ng-template #dots>
+                                                <span class="dot" *ngIf="price.valor_paquete_1.estado == true else nope"></span>
+                                                <ng-template #nope>
+                                                    <span *ngIf="price.titulo == false else nopeChild">-</span>
+                                                    <ng-template #nopeChild></ng-template>
+                                                </ng-template>
+                                            </ng-template>
+                                        </th>
+                                        <th class="text-black-dark font-weight-500 text-center size14 font-weight-500" scope="col" [ngClass]="(price.titulo == false) ? 'text-black-dark' : 'text-white'">
+                                            <ng-template [ngIf]="price.valor_paquete_2.texto != ''" [ngIfElse]="dots">
+                                                {{ price.valor_paquete_2.texto }}
+                                            </ng-template>
+                                            <ng-template #dots>
+                                                <span class="dot" *ngIf="price.valor_paquete_2.estado == true else nope"></span>
+                                                <ng-template #nope>
+                                                    -
+                                                </ng-template>
+                                            </ng-template>
+                                        </th>
+                                        <th class="text-black-dark font-weight-500 text-center size14 font-weight-500" scope="col" [ngClass]="(price.titulo == false) ? 'text-black-dark' : 'text-white'">
+                                            <ng-template [ngIf]="price.valor_paquete_3.texto != ''" [ngIfElse]="dots">
+                                                {{ price.valor_paquete_3.texto }}
+                                            </ng-template>
+                                            <ng-template #dots>
+                                                <span class="dot" *ngIf="price.valor_paquete_3.estado == true else nope"></span>
+                                                <ng-template #nope>
+                                                    -
+                                                </ng-template>
+                                            </ng-template>
+                                        </th>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="size19 font-weight-500 letter-spacing-016 line-height-24 ubuntu text-red">{{ prices.funcionalidades_y_servicios.titulo }}</h2>
+                    <ng-container *ngFor="let descripcion of prices.funcionalidades_y_servicios.descripcion">
+                        <div class="text-gray size16 letter-spacing-044 line-height-24 ubuntu" [innerHTML]="descripcion.descripcion | safeHtml: 'html'"></div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <app-animate-contacto></app-animate-contacto>
+    </div>		
+    <app-sidebar></app-sidebar>
+</div>

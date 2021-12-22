@@ -1,0 +1,13 @@
+<div class="bg-light border-right p-4" id="sidebar-wrapper">
+    <div class="container">
+        <div class="row" *ngIf="data.sidebar">
+            <div class="col-md-7">
+                <img class="img-fluid" [src]="data.sidebar.imagen" alt="Sidenav">
+            </div>
+            <div class="col-md-5 my-auto">
+                <p class="size18 text-gray font-weight-700 letter-spacing-1-18 text-uppercase" [innerHTML]="data.sidebar.texto | safeHtml: 'html'"></p>
+            </div>
+        </div>
+    </div>
+    <app-sidebar-contacto></app-sidebar-contacto>
+</div>

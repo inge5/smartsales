@@ -1,0 +1,11 @@
+.textoItemMenu{
+    font-size: 13px;
+}
+.hover-bg:hover{
+    background-color: #f1f1f1;
+}
+@media (min-width: 1024px) {
+    .contenedor-sesion{
+        width: 0 !important;
+    }
+}

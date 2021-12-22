@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="65px" viewBox="0 0 65 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CA6CB9C3-6AD3-47CE-9A52-6F7A9D95A477SVG</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#409EEF" offset="0%"></stop>
+            <stop stop-color="#16528C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(-688.000000, -806.000000)">
+            <g id="Group-45" transform="translate(135.000000, 665.000000)">
+                <g id="Group-14" transform="translate(438.000000, 141.000000)">
+                    <g id="nfc" transform="translate(115.000000, -0.000000)">
+                        <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="-4.10535803e-14" width="65" height="65" rx="1"></rect>
+                        <path d="M14.4444444,3.59348312 L14.4444444,49.9907676 C15.0342624,58.7014311 17.5079578,63.6514473 21.8655306,64.8408164 C21.9333372,65.0530612 25.2842942,65.0530612 31.9184017,64.8408164 C23.7377049,62.8065076 19.6473565,57.8564913 19.6473565,49.9907676 C19.6473565,42.1250438 19.6473565,30.9287474 19.6473565,16.4018781 L38.5003406,36.3564412 L38.5003406,28.2186996 L14.4444444,3.59348312 Z" id="Path-5" fill="#FFFFFF"></path>
+                        <path d="M25.0552149,3.07901852e-14 L25.0552149,46.3972845 C25.6450329,55.107948 28.1187283,60.0579642 32.4763011,61.2473332 C32.5441077,61.4595781 35.8950648,61.4595781 42.5291722,61.2473332 C34.3484754,59.2130245 30.258127,54.2630082 30.258127,46.3972845 C30.258127,38.5315607 30.258127,27.3352642 30.258127,12.808395 L49.1111111,32.7629581 L49.1111111,24.6252165 L25.0552149,3.07901852e-14 Z" id="Path-5-Copy" fill="#FFFFFF" transform="translate(37.083163, 30.703258) rotate(-180.000000) translate(-37.083163, -30.703258) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

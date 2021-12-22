@@ -1,0 +1,72 @@
+<div class="sticky">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ng-container *ngFor="let logo of widgets.logo">
+                <a class="navbar-brand" [href]="logo.instance.link_url">
+                    <img src="{{ logo.instance.url }}" alt="Logo principal" class="img-logo">
+                </a>
+            </ng-container>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="menuPrincipal" class="d-none d-sm-none d-md-none d-lg-block navbar-nav main-menu-list mr-auto">
+                    <ng-container *ngFor="let item of data.items; first as isFirst;let i = index ">
+                        <li class="nav-item dropdown has-megamenu" [ngClass]="(isFirst) ? 'megamenu' : ''">
+                            <ng-container *ngIf="i == 0">
+                                <a class="nav-link nav-link-main size14 dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"  [href]="item.url" target="blank" rel="noopener" rel="noreferrer">{{ item.title }}</a>
+                            </ng-container>
+                            <ng-container *ngIf="i != 0">  
+                                <ng-container *ngIf="item.title_position == 'hide'">
+                                    <a class="nav-link nav-link-main size14 hide2" (click)="scrollConClick(item.url)" style="cursor: pointer;">{{ item.title }}</a>
+                                </ng-container>
+                                <ng-container *ngIf="item.title_position == 'below'">
+                                    <a class="nav-link nav-link-main size14 below2" (click)="scrollConClick(item.url)" style="cursor: pointer;">{{ item.title }}</a>
+                                </ng-container>
+                                <ng-container *ngIf="item.title_position == ''">
+                                    <a class="nav-link nav-link-main size14" [routerLink]="[item.url]">{{ item.title }}</a>
+                                </ng-container>
+
+                                <ng-container *ngIf="item.title_position == 'before'">
+                                    <a class="nav-link nav-link-main size14 before" [href]="item.url" style="cursor: pointer;">{{ item.title }}</a>
+                                </ng-container>
+                            </ng-container>
+                            <div [ngClass]="(isFirst) ? 'dropdown-menu menuServicio megamenu p-0 px-3' : ''">
+                                <div class="row">
+                                  <ng-container *ngFor="let childItem of item.child_items; first as isFirst">
+                                    <div class="col-md-6 hover-bg">
+                                      <div class="col-megamenu">
+                                        <ul class="list-unstyled">
+                                          <li>
+                                            <a [href]="[ childItem.url ]">
+                                                <img src="{{ childItem.thumbnail_src }}" alt="logos">
+                                                <p class="textoItemMenu">{{ childItem.description }}</p>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </ng-container>
+                                </div>
+                              </div>
+                        </li>
+                    </ng-container>
+                </ul>
+                
+                <!-- <ul class="navbar-nav iniciar-sesion">
+                    <li class="nav-item dropdown text-center">
+                        <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ sesion.name }}
+                        </a>
+                        <div class="dropdown-menu contenedor-sesion" aria-labelledby="navbarDropdownMenuLink">
+                            <ng-container *ngFor="let sesion of sesion.items">
+                                <a class="dropdown-item {{ sesion.classes }}" [href]="sesion.url" target="blank_"><img src="{{ sesion.thumbnail_src }}"> {{ sesion.title }}</a>
+                            </ng-container>
+                        </div>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+</div>
