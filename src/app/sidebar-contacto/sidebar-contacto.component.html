@@ -1,55 +1,154 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <form (ngSubmit)="enviarForm(formulario)" [formGroup]="formulario" id="formulario-Sidenav" class="sidenav-contact mt-3">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-row pt-2 pb-2">
-                            <label class="size16 text-gray" for="empresa">Empresa</label>
-                            <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Neuromedia Agencia Digital SAS" formControlName="empresa">
-                            <small style="color:#c30000;" *ngIf="formulario.get('empresa')!.invalid && (formulario.get('empresa')!.dirty || formulario.get('empresa')!.touched)">
-                                Empresa es un campo requerido.
-                            </small>
-                        </div>
-                        <div class="form-row pt-2 pb-2">
-                            <label class="size16 text-gray" for="nombre">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" formControlName="nombre">
-                            <small style="color:#c30000;" *ngIf="formulario.get('nombre')!.invalid && (formulario.get('nombre')!.dirty || formulario.get('nombre')!.touched)">
-                                Nombre es un campo requerido.
-                            </small>
-                        </div>
-                        <div class="form-row pt-2 pb-2">
-                            <label class="size16 text-gray" for="telefono">Número de Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="3120000000" formControlName="telefono">
-                            <small style="color:#c30000;" *ngIf="formulario.get('telefono')!.invalid && (formulario.get('telefono')!.dirty || formulario.get('telefono')!.touched)">
-                                Ingrese un teléfono válido.
-                            </small>
-                        </div>
-                        <div class="form-row pt-2 pb-2">
-                            <label class="size16 text-gray" for="email">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="neuromedia@gmail.com" formControlName="email">
-                            <small style="color:#c30000;" *ngIf="formulario.get('email')!.invalid && (formulario.get('email')!.dirty || formulario.get('email')!.touched)">
-                                Ingrese un correo electrónico válido.
-                            </small>
-                        </div>
-                        <div class="form-check mt-3">
-                            <input type="checkbox" name="acepto" class="form-check-input" id="acepto" formControlName="acepto">
-                            <label class="size16 text-gray" for="acepto">Conozco y <a class="text-sea-blue" href="http://pruebasneuro.co/N-1075/api/wp-content/uploads/2021/07/Politica-de-tratamiento-de-datos.pdf" target="blank_">acepto la política de datos</a></label>
-                            <small style="color:#c30000;" *ngIf="formulario.get('acepto')!.invalid && (formulario.get('acepto')!.dirty || formulario.get('acepto')!.touched)">
-                                Debe aceptar las condiciones.
-                            </small>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="submit" class="float-left btn btn-smartsale-fill size15 border-radius-2 mt-4 w-100 mx-auto d-block mb-2" name="enviar" value="Solicitar demo" [disabled]="formulario.invalid">
-                            </div>
-                            <div class="col-md-6">
-                                <a mat-button class="line-height-1-5 p-cancel-sidebar w-100 border-radius-2 size15 btn-smartsale mt-4 mb-2 text-decoration-none" (click)="cierraTrabajemos()">Cancelar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+  <div class="row">
+    <div class="col-md-12">
+      <form
+        (ngSubmit)="enviarForm(formulario)"
+        [formGroup]="formulario"
+        id="formulario-Sidenav"
+        class="sidenav-contact mt-3"
+      >
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-row pt-2 pb-2">
+              <label class="size16 text-gray" for="empresa">Empresa</label>
+              <input
+                type="text"
+                class="form-control"
+                id="empresa"
+                name="empresa"
+                placeholder="Neuromedia Agencia Digital SAS"
+                formControlName="empresa"
+              />
+              <small
+                style="color: #c30000"
+                *ngIf="
+                  formulario.get('empresa')!.invalid &&
+                  (formulario.get('empresa')!.dirty ||
+                    formulario.get('empresa')!.touched)
+                "
+              >
+                Empresa es un campo requerido.
+              </small>
+            </div>
+            <div class="form-row pt-2 pb-2">
+              <label class="size16 text-gray" for="nombre"
+                >Nombre completo</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo"
+                formControlName="nombre"
+              />
+              <small
+                style="color: #c30000"
+                *ngIf="
+                  formulario.get('nombre')!.invalid &&
+                  (formulario.get('nombre')!.dirty ||
+                    formulario.get('nombre')!.touched)
+                "
+              >
+                Nombre es un campo requerido.
+              </small>
+            </div>
+            <div class="form-row pt-2 pb-2">
+              <label class="size16 text-gray" for="telefono"
+                >Número de Teléfono</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                placeholder="3120000000"
+                formControlName="telefono"
+              />
+              <small
+                style="color: #c30000"
+                *ngIf="
+                  formulario.get('telefono')!.invalid &&
+                  (formulario.get('telefono')!.dirty ||
+                    formulario.get('telefono')!.touched)
+                "
+              >
+                Ingrese un teléfono válido.
+              </small>
+            </div>
+            <div class="form-row pt-2 pb-2">
+              <label class="size16 text-gray" for="email"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="neuromedia@gmail.com"
+                formControlName="email"
+              />
+              <small
+                style="color: #c30000"
+                *ngIf="
+                  formulario.get('email')!.invalid &&
+                  (formulario.get('email')!.dirty ||
+                    formulario.get('email')!.touched)
+                "
+              >
+                Ingrese un correo electrónico válido.
+              </small>
+            </div>
+            <div class="form-check mt-3">
+              <input
+                type="checkbox"
+                name="acepto"
+                class="form-check-input"
+                id="acepto"
+                formControlName="acepto"
+              />
+              <label class="size16 text-gray" for="acepto"
+                >Conozco y
+                <a
+                  class="text-sea-blue"
+                  href="https://smartsuite.app/api/wp-content/uploads/2021/07/Politica-de-tratamiento-de-datos.pdf"
+                  target="blank_"
+                  >acepto la política de datos</a
+                ></label
+              >
+              <small
+                style="color: #c30000"
+                *ngIf="
+                  formulario.get('acepto')!.invalid &&
+                  (formulario.get('acepto')!.dirty ||
+                    formulario.get('acepto')!.touched)
+                "
+              >
+                Debe aceptar las condiciones.
+              </small>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  type="submit"
+                  class="float-left btn btn-smartsale-fill size15 border-radius-2 mt-4 w-100 mx-auto d-block mb-2"
+                  name="enviar"
+                  value="Solicitar demo"
+                  [disabled]="formulario.invalid"
+                />
+              </div>
+              <div class="col-md-6">
+                <a
+                  mat-button
+                  class="line-height-1-5 p-cancel-sidebar w-100 border-radius-2 size15 btn-smartsale mt-4 mb-2 text-decoration-none"
+                  (click)="cierraTrabajemos()"
+                  >Cancelar</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>
